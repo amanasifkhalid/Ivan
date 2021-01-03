@@ -76,7 +76,7 @@ a, a:hover, button, button:hover {
 
 #BPMControls button:hover {
 	color: #1e2227;
-	background: #557574;
+	background-color: #557574;
 }
 
 #BPMControls h2 {
@@ -103,7 +103,7 @@ a, a:hover, button, button:hover {
 	border-top-left-radius: 35px;
 	border-bottom-left-radius: 35px;
 	color: #1f1a24;
-	background-color: #9f99a7;
+	background-color: #82a4a3;
 }
 
 #inspireBtn {
@@ -111,16 +111,15 @@ a, a:hover, button, button:hover {
 	border-top-right-radius: 35px;
 	border-bottom-right-radius: 35px;
 	color: #fff;
-	background-color: #716b78;
+	background-color: #557574;
 }
 
 #aboutBtn:hover {
-	color: #1f1a24;
-	background-color: #d0cad8;
+	background-color: #dad9d4;
 }
 
 #inspireBtn:hover {
-	background-color: #46404c;
+	background-color: #2a4949;
 }
 
 @media(max-width: 434px) {
