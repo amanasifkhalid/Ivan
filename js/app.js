@@ -1,6 +1,7 @@
 var metronome = new Metronome();
 var bpm = document.getElementById("BPM");
 var bpm_label = document.getElementById("BPMLabel");
+var counter = document.getElementById("counter");
 bpm.value = metronome.bpm;
 
 var trigger_btn = document.getElementById("triggerBtn");
@@ -18,9 +19,9 @@ function change_BPM(change) {
 	change_metronome();
 }
 
-function set_BPM() {
-	bpm.value = "60";
-	change_metronome();
+function reset() {
+	counter.innerHTML = 0;
+	metronome.stop();
 }
 
 const links = ["fgWHrYC4LEs?t=240", "rpss7GsCj7A", "zzJzhTqJASY", "h5puAf5jkLc", "hjPrHmDtVGg?t=13", "YQCtq-t0F8U", "qwURbkxB4SU", "sPQ5E4o9Ewk", "j2LYsNujdG0", "eo-_pHMENjQ", "nrUPtkL-6Nk", "yb_5mJlVHPc", "EDh8a-a6TSo", "Jx_tj6EJWOg", "r0JfH_lgDqc?t=400", "UXDVB-glRKw"];

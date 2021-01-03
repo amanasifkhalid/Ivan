@@ -8,29 +8,30 @@ body {
 	font-family: Arial, sans-serif;
 }
 
-h1 {
+#metronomeUI {
 	text-align: center;
+	margin-top: 10vh;
+	height: 90vh;
+}
+
+#metronomeUI>div {
+	margin-top: 5vh;
+}
+
+h1 {
 	font-size: 50px;
 }
 
-#title {
-	padding-top: 5%;
-	margin-bottom: 5vh;
-	margin-left: 2%;
-	margin-right: 2%;
+a, a:hover, button, button:hover {
+	transition: 100ms;
 }
 
-#title a {
+#credits {
 	color: #FFCB05;
 }
 
-#title a:hover {
+#credits:hover {
 	color: #ffdb4d;
-}
-
-#metronomeUI {
-	text-align: center;
-	height: 95vh;
 }
 
 #btnContainer label {
@@ -61,12 +62,8 @@ h1 {
 	min-width: 300px;
 }
 
-#BPMControls {
-	margin-top: 10px;
-	margin-left: -1vw;
-}
-
 #BPMControls button {
+	margin: 10px 0;
 	margin-left: 0.5vw;
 	width: 60px;
 	height: 60px;
@@ -75,28 +72,31 @@ h1 {
 	color: #dad9d4;
 	background-color: #2a4949;
 	border: none;
-	transition: 100ms;
 }
 
 #BPMControls button:hover {
 	color: #1e2227;
 	background: #557574;
-	transition: 100ms;
+}
+
+#BPMControls h2 {
+	margin-bottom: 10px;
+}
+
+#keySig {
+	margin-top: 10px;
 }
 
 #navBtnGroup {
-	margin-left: 5px;
-	margin-top: 60px;
 	text-align: center;
+	padding-top: 5vh;
 }
 
 #navBtnGroup a {
-	margin-left: -5px;
 	padding: 20px;
 	border: none;
 	appearance: button;
 	text-decoration: none;
-	transition: 100ms;
 }
 
 #aboutBtn {
@@ -107,6 +107,7 @@ h1 {
 }
 
 #inspireBtn {
+	margin-left: -5px;
 	border-top-right-radius: 35px;
 	border-bottom-right-radius: 35px;
 	color: #fff;
@@ -116,12 +117,10 @@ h1 {
 #aboutBtn:hover {
 	color: #1f1a24;
 	background-color: #d0cad8;
-	transition: 100ms;
 }
 
 #inspireBtn:hover {
 	background-color: #46404c;
-	transition: 100ms;
 }
 
 @media(max-width: 434px) {
