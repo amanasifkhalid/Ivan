@@ -1,0 +1,131 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #1f1a24;
+	color: #dad9d4;
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+}
+
+#title {
+	padding-top: 5%;
+	margin-bottom: 5vh;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+#title a {
+	color: #FFCB05;
+}
+
+#title a:hover {
+	color: #ffdb4d;
+}
+
+#metronomeUI {
+	text-align: center;
+	height: 95vh;
+}
+
+#btnContainer label {
+	display: block;
+	box-sizing: border-box;
+	width: 0;
+	height: 74px;
+	border-color: transparent transparent transparent #dad9d4;
+	transition: 100ms all ease;
+	cursor: pointer;
+	border-style: double;
+	border-width: 0px 0 0px 60px;
+	margin: 0 auto;
+}
+
+#btnContainer input[type="checkbox"] {
+	position: absolute;
+	left: -9999px;
+}
+
+#btnContainer input[type="checkbox"]:checked + label {
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+}
+
+#BPM {
+	width: 50vw;
+	min-width: 300px;
+}
+
+#BPMControls {
+	margin-top: 10px;
+	margin-left: -1vw;
+}
+
+#BPMControls button {
+	margin-left: 0.5vw;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	font-size: 20px;
+	color: #dad9d4;
+	background-color: #2a4949;
+	border: none;
+	transition: 100ms;
+}
+
+#BPMControls button:hover {
+	color: #1e2227;
+	background: #557574;
+	transition: 100ms;
+}
+
+#navBtnGroup {
+	margin-left: 5px;
+	margin-top: 60px;
+	text-align: center;
+}
+
+#navBtnGroup a {
+	margin-left: -5px;
+	padding: 20px;
+	border: none;
+	appearance: button;
+	text-decoration: none;
+	transition: 100ms;
+}
+
+#aboutBtn {
+	border-top-left-radius: 35px;
+	border-bottom-left-radius: 35px;
+	color: #1f1a24;
+	background-color: #9f99a7;
+}
+
+#inspireBtn {
+	border-top-right-radius: 35px;
+	border-bottom-right-radius: 35px;
+	color: #fff;
+	background-color: #716b78;
+}
+
+#aboutBtn:hover {
+	color: #1f1a24;
+	background-color: #d0cad8;
+	transition: 100ms;
+}
+
+#inspireBtn:hover {
+	background-color: #46404c;
+	transition: 100ms;
+}
+
+@media(max-width: 434px) {
+	h1 {
+		font-size: 40px;
+	}
+}
