@@ -37,10 +37,10 @@ function stop_count() {
 	notes = 0;
 }
 
-function trigger_counter(is_running, tonic_note) {
+function trigger_counter(is_running, tonic_note, num_octaves) {
 	if (is_running) {
 		tonic = tonic_note;
-		top_note = tonic.slice(0, tonic.length - 1) + (parseInt(tonic.slice(-1)) + 3);
+		top_note = tonic.slice(0, tonic.length - 1) + (parseInt(tonic.slice(-1)) + parseInt(num_octaves));
 		start_count();
 	} else {
 		stop_count();
