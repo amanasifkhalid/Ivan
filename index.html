@@ -9,6 +9,10 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
 		<link rel="manifest" href="site.webmanifest">
+		<script defer src="js/metronome.js"></script>
+		<script defer src="https://unpkg.com/web-audio-daw"></script>
+		<script defer src="js/counter.js"></script>
+		<script defer src="js/app.js"></script>
 	</head>
 	<body onload="reset_choices()">
 		<a id="credits" href="https://amanasifkhalid.github.io/" target="_blank">By Aman Khalid</a>
@@ -19,7 +23,7 @@
 				<label id="triggerBtn" for="playPauseCheck"></label>
 			</div>
 			<div id="BPMControls">
-				<h2><b id="BPMLabel">60</b> BPM | Reps: <b id="counter">0</b></h2>
+				<p id="metInfo"><b id="BPMLabel">60</b> BPM | Reps: <b id="counter">0</b></p>
 				<div>
 					<input type="range" id="BPM" name="BPM" value="60" min="30" max="200" required onchange="change_metronome()">
 				</div>
@@ -73,12 +77,39 @@
 				<a id="inspireBtn" role="button" href="#" onclick="inspire()">Get Inspired</a>
 			</div>
 		</div>
-		<div id="about">
-			<h2>About Ivan</h2>
+		<div id="about" class="section">
+			<h2 class="subhead">About</h2>
+			<p>Ivan is a scale practice tool for ambitious musicians like you and me!</p>
+			<p>Named after the great violin pedagogue <a href="https://en.wikipedia.org/wiki/Ivan_Galamian" target="_blank">Ivan Galamian</a>, Ivan is a metronome that also counts your scale repetitions by listening to you practice.</p>
 		</div>
-		<script defer src="js/metronome.js"></script>
-		<script defer src="https://unpkg.com/web-audio-daw"></script>
-		<script defer src="js/counter.js"></script>
-		<script defer src="js/app.js"></script>
+		<div class="section">
+			<h2 class="subhead">FAQ</h2>
+			<i>Why did you create Ivan?</i>
+			<p>When I began studying with my current violin teacher, <a href="https://www.fiddlerstooinc.com/rachel-stegeman-bio" target="_blank">Rachel Stegeman</a>, my playing fundamentally changed in so many desirable ways. Much of this change may be attributed to how Mrs. Stegeman and her husband, <a href="https://www.fiddlerstooinc.com/charles-stegeman-bio" target="_blank">Charles Stegeman</a>, approach violin technique: As alumni of Robert Lipsett and Ivan Galamian, respectively, they are firm believers in scales. In fact, the Stegemans' students are expected to complete 50 scale reps and 70 arpeggio reps every practice session (see Carl Flesch Exercise 5 for reference).</p>
+			<p>There's a lot to say about the value of scales, but that's a conversation for another day. Yet despite its value, I have one problem with this routine: <b>I'm terrible at counting my own reps.</b> Practicing the violin effectively requires a lot of focus, and we don't have attention to spare.</p>
+			<p>What if your metronome could do the counting for you? That's where Ivan comes in.</p>
+			<i>How do I use Ivan?</i>
+			<p>To set up rep counting, make sure "Count Reps" is checked, and select the tonic (first scale tone) of your key, your instrument, and the number of octaves from the dropdowns. Finally, set your tempo, and press play to get started.</p>
+			<p>As long as your scale starts with the lowest octave of the tonic on your instrument, reaches the specified octave, and returns to the bottom octave, it should work with the rep counter. Major, minor, chromatic, whole-tone, arpeggios &mdash; you name it! Just make sure you aren't too far away from your microphone. Also, depending on your hardware, very fast tempi may not work.</p>
+			<p>If you don't need rep counting, just uncheck the box and play on!</p>
+			<i>How does Ivan work?</i>
+			<p>While the metronome runs, Ivan uses your microphone to listen for the start and completion of each rep. As long as your microphone can hear the bottom and top note of each rep &mdash; and you're playing those pitches relatively in tune &mdash; Ivan will count it!</p>
+			<i>Can't I trick Ivan into counting reps by just playing the bottom and top pitches of the scale?</i>
+			<p>Yes you can, but then you're just cheating yourself out of valuable scale practice. Plus, if you can consistently and quickly jump between those octaves, that's pretty impressive.</p>
+			<i>Why aren't all key signatures supported for cellists?</i>
+			<p>Unfortunately, due to API limitations, some scale tones on the cello are too low in frequency to be reliably identified. Sorry, cellists!</p>
+			<i>Why aren't 4-octave scales supported for all key signatures?</i>
+			<p>Similar to above, Ivan can't recognize pitches higher than an A#7. If you practice 4-octave scales higher than that, good for you, and I'm sorry.</p>
+			<i>I don't feel comfortable sharing my microphone and/or I don't need rep counting. Why should I use Ivan?</i>
+			<p>If you have a physical metronome, then you probably don't need Ivan...</p>
+			<p>But if you use an online metronome or an app, then Ivan's metronome has a compelling feature: <b>It's really lightweight</b>. Ivan's total uncompressed size is <a>less than X kilobytes</a>. For reference, analysts believe the average website is megabytes (or thousands of kilobytes) in size.</p>
+			<p>Website bloat has real consequences. By using more resources, bloated websites create accessibility challenges for low-end devices, especially on the mobile web. Bloated websites also increase server energy usage. On an individual basis, this impact is nominal, but across millions of websites, this bloat creates harmful consequences for the environment; not all server farms are running on renewable energy, yet. Either way, you're racking up someone's energy bill. :P</p>
+			<p>Software minimalism is a top priority for all of my projects because I want everyone to be able to enjoy my work, all while using fewer resources. If you're interested in this philosophy, check out the <a href="https://512kb.club/" target="_blank">512KB Club</a>.</p>
+			<i>I'm a nerd, too! Where can I view the source code?</i>
+			<p>Glad you asked! Like all of my projects, you can fork Ivan on my <a href="https://github.com/amanasifkhalid/Ivan" target="_blank">GitHub page</a>. :)</p>
+		</div>
+		<div id="bottom">
+			<a id="scrollUpBtn" role="button" href="#">Back to practicing!</a>
+		</div>
 	</body>
 </html>

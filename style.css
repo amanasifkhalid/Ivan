@@ -26,11 +26,15 @@ a, a:hover, button, button:hover {
 	transition: 100ms;
 }
 
-#credits {
+button:hover, a[role="button"]:hover {
+	box-shadow: 0 0 20px #000008;
+}
+
+a {
 	color: #FFCB05;
 }
 
-#credits:hover {
+a:hover {
 	color: #ffdb4d;
 }
 
@@ -79,8 +83,9 @@ a, a:hover, button, button:hover {
 	background-color: #557574;
 }
 
-#BPMControls h2 {
+#metInfo {
 	margin-bottom: 10px;
+	font-size: 25px;
 }
 
 #keySig, #numOctaves, #instrument {
@@ -100,7 +105,7 @@ select {
 	padding-top: 3vh;
 }
 
-#navBtnGroup a {
+#navBtnGroup a, #scrollUpBtn {
 	padding: 20px;
 	border: none;
 	appearance: button;
@@ -130,8 +135,49 @@ select {
 	background-color: #2a4949;
 }
 
+.section {
+	margin: 2vw;
+}
+
+.section p, .section b, .section i {
+	font-size: 20px;
+	line-height: 1.8;
+}
+
+.section b {
+	color: #FFCB05;
+}
+
+.section i {
+	color: #81e8dd;
+}
+
+.subhead {
+	font-size: 50px;
+	margin-bottom: 2vw;
+}
+
+#bottom {
+	margin: 40px 0;
+	text-align: center;
+}
+
+#scrollUpBtn {
+	border-radius: 35px;
+	color: #fff;
+	background-color: #2a4949;
+}
+
+#scrollUpBtn:hover {
+	background-color: #557574;
+}
+
 @media(max-width: 500px) {
 	h1 {
 		font-size: 35px;
+	}
+
+	.subhead {
+		font-size: 40px;
 	}
 }
