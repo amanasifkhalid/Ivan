@@ -1,10 +1,22 @@
-var mic_input = new Wad({source: "mic"});
-var listener = new Wad.Poly();
+var mic_input = null;
+var listener = null;
 var notes = 0;
 var tonic = null;
 var top_note = null;
-listener.setVolume(0);
-listener.add(mic_input);
+var tonic_dict = {
+	"A": [3, 3, 2],
+	"A#": [3, 3, 2],
+	"B": [3, 3, 2],
+	"C": [4, 3, 2],
+	"C#": [4, 3, 2],
+	"D": [4, 3, 2],
+	"D#": [4, 3, 2],
+	"E": [4, 3, 2],
+	"F": [4, 3, 2],
+	"F#": [4, 3, 2],
+	"G": [3, 3, 2],
+	"G#": [2, 3, 2]
+};
 
 function log_pitch() {
 	if (!metronome.is_running) {
@@ -26,6 +38,13 @@ function log_pitch() {
 }
 
 function start_count() {
+	if (listener == null) {
+		mic_input = new Wad({source: "mic"});
+		listener = new Wad.Poly();
+		listener.setVolume(0);
+		listener.add(mic_input);
+	}
+
 	mic_input.play();
 	listener.updatePitch();
 	log_pitch(tonic);
@@ -37,9 +56,9 @@ function stop_count() {
 	notes = 0;
 }
 
-function trigger_counter(is_running, tonic_note, num_octaves) {
+function trigger_counter(is_running, tonic_note, num_octaves, instrument) {
 	if (is_running) {
-		tonic = tonic_note;
+		tonic = tonic_note + tonic_dict[tonic_note][instrument];
 		top_note = tonic.slice(0, tonic.length - 1) + (parseInt(tonic.slice(-1)) + parseInt(num_octaves));
 		start_count();
 	} else {

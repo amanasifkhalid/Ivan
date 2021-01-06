@@ -83,7 +83,7 @@ a, a:hover, button, button:hover {
 	margin-bottom: 10px;
 }
 
-#keySig, #numOctaves {
+#keySig, #numOctaves, #instrument {
 	margin-top: 10px;
 }
 
