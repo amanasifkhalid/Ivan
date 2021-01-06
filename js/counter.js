@@ -11,15 +11,14 @@ function log_pitch() {
 		return;
 	}
 
-	if (notes == 0 && listener.noteName == tonic) {
+	if (listener.noteName == null) {
+
+	} else if (notes == 0 && listener.noteName[0] == tonic[0] && listener.noteName.slice(-1) == tonic.slice(-1)) {
 		++notes;
-		console.log(notes);
-	} else if (notes == 1 && listener.noteName == top_note) {
+	} else if (notes == 1 && listener.noteName[0] == top_note[0] && listener.noteName.slice(-1) == top_note.slice(-1)) {
 		++notes;
-		console.log(notes);
-	} else if (notes == 2 && listener.noteName == tonic) {
+	} else if (notes == 2 && listener.noteName[0] == tonic[0] && listener.noteName.slice(-1) == tonic.slice(-1)) {
 		notes = 0;
-		console.log(notes);
 		counter_label.innerHTML = parseInt(counter_label.innerHTML) + 1;
 	}
 
