@@ -33,10 +33,6 @@ class Metronome {
 	}
 
 	start() {
-		if (this.is_running) {
-			return;
-		}
-
 		if (this.context == null) {
 			this.context = new (window.AudioContext || window.webkitAudioContext)();
 		}

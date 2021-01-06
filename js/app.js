@@ -1,12 +1,15 @@
 var metronome = new Metronome();
 var bpm = document.getElementById("BPM");
 var bpm_label = document.getElementById("BPMLabel");
-var counter = document.getElementById("counter");
+var counter_label = document.getElementById("counter");
+var tonic_select = document.getElementById("tonicSelect");
 bpm.value = metronome.bpm;
 
 var trigger_btn = document.getElementById("triggerBtn");
 trigger_btn.addEventListener("click", function() {
 	metronome.trigger();
+	trigger_counter(metronome.is_running, tonic_select.value);
+	tonic_select.disabled = metronome.is_running;
 });
 
 function change_metronome() {
@@ -20,8 +23,8 @@ function change_BPM(change) {
 }
 
 function reset() {
-	counter.innerHTML = 0;
 	metronome.stop();
+	counter_label.innerHTML = 0;
 }
 
 const links = ["fgWHrYC4LEs?t=240", "rpss7GsCj7A", "zzJzhTqJASY", "h5puAf5jkLc", "hjPrHmDtVGg?t=13", "YQCtq-t0F8U", "qwURbkxB4SU", "sPQ5E4o9Ewk", "j2LYsNujdG0", "eo-_pHMENjQ", "nrUPtkL-6Nk", "yb_5mJlVHPc", "EDh8a-a6TSo", "Jx_tj6EJWOg", "r0JfH_lgDqc?t=400", "UXDVB-glRKw"];

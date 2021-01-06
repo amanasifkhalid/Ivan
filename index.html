@@ -29,9 +29,20 @@
 				<button type="button" onclick="change_BPM(1)">+</button>
 				<button type="button" onclick="change_BPM(5)">+5</button>
 				<div id="keySig">
-					<label for="keySelect">Tonic:</label>
-					<select name="keySelect" id="keySelect">
-						<option value="A">A</option>
+					<label for="tonicSelect">Tonic:</label>
+					<select name="tonicSelect" id="tonicSelect">
+						<option value="A3" selected>A</option>
+						<option value="A#3">A#</option>
+						<option value="B3">B</option>
+						<option value="C4">C</option>
+						<option value="C#4">C#</option>
+						<option value="D4">D</option>
+						<option value="D#4">D#</option>
+						<option value="E4">E</option>
+						<option value="F4">F</option>
+						<option value="F#4">F#</option>
+						<option value="G3">G</option>
+						<option value="G#3">G#</option>
 					</select>
 				</div>
 			</div>
@@ -44,6 +55,8 @@
 			<h2>About Ivan</h2>
 		</div>
 		<script src="js/metronome.js"></script>
+		<script src="https://unpkg.com/web-audio-daw"></script>
+		<script src="js/counter.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>
