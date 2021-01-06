@@ -6,7 +6,6 @@ var count_check = document.getElementById("countReps");
 var tonic_select = document.getElementById("tonicSelect");
 var octave_select = document.getElementById("octaveSelect");
 var instrument_select = document.getElementById("instrumentSelect");
-var trigger_btn = document.getElementById("triggerBtn");
 var play_check = document.getElementById("playPauseCheck");
 bpm.value = metronome.bpm;
 
@@ -31,7 +30,7 @@ count_check.addEventListener("change", function() {
 	instrument_select.disabled = !count_check.checked;
 });
 
-trigger_btn.addEventListener("click", function() {
+play_check.addEventListener("change", function() {
 	metronome.trigger();
 	if (count_check.checked) {
 		trigger_counter(metronome.is_running, tonic_select.value, octave_select.value, instrument_select.value);
