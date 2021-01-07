@@ -90,16 +90,15 @@
 			<p>What if your metronome could do the counting for you? That's where Ivan comes in.</p>
 			<i>How do I use Ivan?</i>
 			<p>To set up rep counting, make sure "Count Reps" is checked, and select the tonic (first scale tone) of your key, your instrument, and the number of octaves from the dropdowns. Finally, set your tempo, and press play to get started.</p>
-			<p>As long as your scale starts with the lowest octave of the tonic on your instrument, reaches the specified octave, and returns to the bottom octave, it should work with the rep counter. Major, minor, chromatic, whole-tone, arpeggios &mdash; you name it! Just make sure you aren't too far away from your microphone. Also, depending on your hardware, very fast tempi may not work.</p>
+			<p>As long as your scale starts with the lowest octave of the tonic on your instrument, reaches the specified octave, and returns to the bottom octave, it should work with the rep counter. Major, minor, chromatic, whole-tone, arpeggios, turn or no turn &mdash; you name it! Just make sure you aren't too far away from your microphone. Also, depending on your hardware, very fast tempi may not work.</p>
 			<p>If you don't need rep counting, just uncheck the box and play on!</p>
 			<i>How does Ivan work?</i>
-			<p>While the metronome runs, Ivan uses your microphone to listen for the beginning and end of each rep. As long as your microphone can hear the bottom and top note of each rep &mdash; and you're playing those pitches relatively in tune &mdash; Ivan will count it!</p>
-			<i>Can't I trick Ivan into counting reps by just playing the bottom and top pitches of the scale?</i>
-			<p>Yes you can, but then you're just cheating yourself out of valuable scale practice. Plus, if you can consistently and quickly jump between those octaves, that's pretty impressive.</p>
+			<p>While the metronome runs, Ivan uses your microphone to listen for specific "checkpoints" along the scale. As long as your microphone can hear you &mdash; and you're playing relatively in tune &mdash; Ivan will count it!</p>
+			<p>Fair warning: String instruments are very resonant. When you play a single note, your instrument also produces multiple "overtones," or pitches higher than the current note. In particularly resonant keys (like G, A, and D on the violin), your microphone can probably hear those overtones. If you're like me and you check your pitch with double stops, you might trick Ivan into counting a rep early. For example, the Es on my violin are especially resonant, so checking my intonation with a B-E fourth or E-B fifth usually messes the counter up. Be careful with double stops in these keys!</p>
 			<i>Why aren't all key signatures supported for cellists?</i>
 			<p>Unfortunately, due to API limitations, some scale tones on the cello are too low in frequency to be reliably identified. Sorry, cellists!</p>
 			<i>Why aren't 4-octave scales supported for all key signatures?</i>
-			<p>Similar to above, Ivan can't recognize pitches higher than an A#7. If you practice 4-octave scales higher than that, good for you, and I'm sorry.</p>
+			<p>Similar to above, Ivan can't recognize pitches higher than an A#7. If you practice 4-octave scales higher than that, (a) good for you, and (b) I'm sorry.</p>
 			<i>I don't feel comfortable sharing my microphone and/or I don't need rep counting. Why should I use Ivan?</i>
 			<p>If you have a physical metronome, then you probably don't need Ivan...</p>
 			<p>But if you use an online metronome or an app, then Ivan's metronome has a compelling feature: <b>It's really lightweight</b>. Ivan's total uncompressed size is <a href="https://gtmetrix.com/reports/ivanmet.netlify.app/YyXfrCxI/" target="_blank">less than 200 kilobytes</a>. For reference, analysts believe the average website is megabytes (or thousands of kilobytes) in size.</p>
