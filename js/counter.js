@@ -31,7 +31,6 @@ function log_pitch() {
 
 	} else if (ideal_set.has(listener.noteName)) {
 		note_set.add(listener.noteName);
-		console.log(note_set);
 	}
 
 	if (notes == 0 && listener.noteName == tonic) {
