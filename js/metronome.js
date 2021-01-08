@@ -7,6 +7,7 @@ class Metronome {
 		this.look_ahead_time = 0.1; // In seconds
 		this.next_note_time = 0.0;
 		this.is_running = false;
+		this.wake_lock = null;
 	}
 
 	schedule_note(time) {
@@ -33,6 +34,12 @@ class Metronome {
 	}
 
 	start() {
+		if ("wakeLock" in navigator) {
+			try {
+				wake_lock = await navigator.wakeLock.request("screen");
+			} catch (err) {}
+		}
+
 		if (this.context == null) {
 			this.context = new (window.AudioContext || window.webkitAudioContext)();
 		}
@@ -45,6 +52,9 @@ class Metronome {
 	stop() {
 		this.is_running = false;
 		clearInterval(this.interval_ID);
+		if ("wakeLock" in navigator) {
+			wake_lock.release().then(() => {wake_lock = null;});
+		}
 	}
 
 	trigger() {
