@@ -45,7 +45,7 @@ function warn_IOS() {
     "iPhone",
     "iPod"
   ].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
-		alert("Hello, iOS user!\nUnfortunately, microphone support on iOS devices isn't up to snuff yet. Rep counting works best on desktop in Chrome/Firefox; sorry for the inconvenience!")
+		alert("Hello, iOS user!\n\nUnfortunately, microphone support on iOS devices isn't up to snuff yet. Rep counting works best on desktop in Chrome/Firefox; sorry for the inconvenience!")
 	}
 
 	notify_IOS = true;
@@ -54,8 +54,8 @@ function warn_IOS() {
 play_check.addEventListener("change", function() {
 	metronome.trigger();
 	if (count_check.checked) {
-		warn_IOS();
 		trigger_counter(metronome.is_running, tonic_select.value, octave_select.value, instrument_select.value);
+		warn_IOS();
 	}
 
 	disable();
