@@ -8,6 +8,7 @@ var octave_select = document.getElementById("octaveSelect");
 var instrument_select = document.getElementById("instrumentSelect");
 var play_check = document.getElementById("playPauseCheck");
 var curr_note = document.getElementById("currNote");
+var notify_IOS = false;
 bpm.value = metronome.bpm;
 
 function reset_choices() {
@@ -31,9 +32,29 @@ count_check.addEventListener("change", function() {
 	instrument_select.disabled = !count_check.checked;
 });
 
+function warn_IOS() {
+	if (notify_IOS) {
+		return;
+	}
+
+	if ([
+    "iPad Simulator",
+    "iPhone Simulator",
+    "iPod Simulator",
+    "iPad",
+    "iPhone",
+    "iPod"
+  ].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
+		alert("Hello, iOS user!\nUnfortunately, microphone support on iOS devices isn't up to snuff yet. Rep counting works best on desktop in Chrome/Firefox; sorry for the inconvenience!")
+	}
+
+	notify_IOS = true;
+}
+
 play_check.addEventListener("change", function() {
 	metronome.trigger();
 	if (count_check.checked) {
+		warn_IOS();
 		trigger_counter(metronome.is_running, tonic_select.value, octave_select.value, instrument_select.value);
 	}
 
