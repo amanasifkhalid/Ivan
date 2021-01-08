@@ -7,6 +7,7 @@ var tonic_select = document.getElementById("tonicSelect");
 var octave_select = document.getElementById("octaveSelect");
 var instrument_select = document.getElementById("instrumentSelect");
 var play_check = document.getElementById("playPauseCheck");
+var curr_note = document.getElementById("currNote");
 bpm.value = metronome.bpm;
 
 function reset_choices() {

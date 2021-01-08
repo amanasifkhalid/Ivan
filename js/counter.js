@@ -22,6 +22,10 @@ function log_pitch() {
 		return;
 	}
 
+	if (listener.noteName != null && listener.noteName != curr_note.innerHTML) {
+		curr_note.innerHTML = listener.noteName;
+	}
+
 	if (listener.noteName == null) {
 
 	} else if (listener.noteName == goal[check]) {
@@ -54,6 +58,7 @@ function stop_count() {
 	mic_input.stop();
 	goal = [];
 	check = 0;
+	curr_note.innerHTML = "-";
 }
 
 function trigger_counter(is_running, tonic_note, num_octaves, instrument) {
