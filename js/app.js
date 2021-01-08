@@ -12,7 +12,7 @@ var notify_IOS = false;
 bpm.value = metronome.bpm;
 
 function reset_choices() {
-	count_check.checked = true;
+	count_check.checked = false;
 	play_check.checked = true;
 	tonic_select.value = "A";
 	octave_select.value = "3";
@@ -33,10 +33,6 @@ count_check.addEventListener("change", function() {
 });
 
 function warn_IOS() {
-	if (notify_IOS) {
-		return;
-	}
-
 	if ([
     "iPad Simulator",
     "iPhone Simulator",
@@ -54,8 +50,12 @@ function warn_IOS() {
 play_check.addEventListener("change", function() {
 	metronome.trigger();
 	if (count_check.checked) {
+		if (!notify_IOS) {
+			warn_IOS();
+			return;
+		}
+
 		trigger_counter(metronome.is_running, tonic_select.value, octave_select.value, instrument_select.value);
-		warn_IOS();
 	}
 
 	disable();
