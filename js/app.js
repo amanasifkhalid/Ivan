@@ -9,31 +9,6 @@ var instrument_select = document.getElementById("instrumentSelect");
 var play_check = document.getElementById("playPauseCheck");
 bpm.value = metronome.bpm;
 
-if ("wakeLock" in navigator) {
-	let wake_lock = null;
-	const request = async () => {
-		try {
-			wake_lock = await navigator.wakeLock.request("screen");
-		} catch (err) {}
-	}
-
-	play_check.addEventListener("change", () => {
-		if (metronome.is_running) {
-			request();
-		} else {
-			wake_lock.release().then(() => {wake_lock = null;});
-		}
-	});
-
-	const vis_change = () => {
-		if (wake_lock != null && document.visibilityState == "visible") {
-			request();
-		}
-	}
-
-	document.addEventListener("visibilitychange", vis_change);
-}
-
 function reset_choices() {
 	count_check.checked = true;
 	play_check.checked = true;
@@ -63,6 +38,31 @@ play_check.addEventListener("change", function() {
 
 	disable();
 });
+
+if ("wakeLock" in navigator) {
+	let wake_lock = null;
+	const request = async () => {
+		try {
+			wake_lock = await navigator.wakeLock.request("screen");
+		} catch (err) {}
+	}
+
+	play_check.addEventListener("change", () => {
+		if (metronome.is_running) {
+			request();
+		} else {
+			wake_lock.release().then(() => {wake_lock = null;});
+		}
+	});
+
+	const vis_change = () => {
+		if (wake_lock != null && document.visibilityState == "visible") {
+			request();
+		}
+	}
+
+	document.addEventListener("visibilitychange", vis_change);
+}
 
 function check_octave() {
 	var index = parseInt(tonic_select.selectedIndex);
