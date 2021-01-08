@@ -39,7 +39,7 @@ function warn_IOS() {
     "iPhone",
     "iPod"
     ].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
-		alert("Hello, iOS user!\n\nUnfortunately, microphone support on iOS devices isn't up to snuff yet. Rep counting works best on desktop in Chrome/Firefox; sorry for the inconvenience!")
+		alert("Hello, iOS user!\n\nUnfortunately, microphone support on iOS devices isn't up to snuff yet. Rep counting works best on desktop in Chrome/Firefox; tread carefully, and sorry for the inconvenience!")
 	}
 
 	IOS_warning = true;
