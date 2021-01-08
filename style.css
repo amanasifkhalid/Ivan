@@ -38,6 +38,10 @@ a:hover {
 	color: #ffdb4d;
 }
 
+#metInfo b {
+	font-family: monospace, monospace;
+}
+
 #btnContainer label {
 	display: block;
 	box-sizing: border-box;

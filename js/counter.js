@@ -23,7 +23,7 @@ function log_pitch() {
 	}
 
 	if (listener.noteName != null && listener.noteName != curr_note.innerHTML) {
-		curr_note.innerHTML = listener.noteName;
+		curr_note.innerHTML = listener.noteName.length == 2 ? listener.noteName + "&nbsp;" : listener.noteName;
 	}
 
 	if (listener.noteName == null) {
@@ -58,7 +58,7 @@ function stop_count() {
 	mic_input.stop();
 	goal = [];
 	check = 0;
-	curr_note.innerHTML = "-";
+	curr_note.innerHTML = "--&nbsp;";
 }
 
 function trigger_counter(is_running, tonic_note, num_octaves, instrument) {
