@@ -9,6 +9,7 @@ var instrument_select = document.getElementById("instrumentSelect");
 var play_check = document.getElementById("playPauseCheck");
 var curr_note = document.getElementById("currNote");
 bpm.value = metronome.bpm;
+var IOS_warning = false;
 
 function reset_choices() {
 	count_check.checked = false;
@@ -16,7 +17,6 @@ function reset_choices() {
 	tonic_select.value = "A";
 	octave_select.value = "3";
 	instrument_select.value = "0";
-	warn_IOS();
 }
 
 function disable() {
@@ -26,13 +26,11 @@ function disable() {
 	instrument_select.disabled = metronome.is_running;
 }
 
-count_check.addEventListener("change", function() {
-	tonic_select.disabled = !count_check.checked;
-	octave_select.disabled = !count_check.checked;
-	instrument_select.disabled = !count_check.checked;
-});
-
 function warn_IOS() {
+	if (IOS_warning) {
+		return;
+	}
+
 	if ([
     "iPad Simulator",
     "iPhone Simulator",
@@ -40,10 +38,21 @@ function warn_IOS() {
     "iPad",
     "iPhone",
     "iPod"
-  ].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
+    ].includes(navigator.platform) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
 		alert("Hello, iOS user!\n\nUnfortunately, microphone support on iOS devices isn't up to snuff yet. Rep counting works best on desktop in Chrome/Firefox; sorry for the inconvenience!")
 	}
+
+	IOS_warning = true;
 }
+
+count_check.addEventListener("change", function() {
+	tonic_select.disabled = !count_check.checked;
+	octave_select.disabled = !count_check.checked;
+	instrument_select.disabled = !count_check.checked;
+	if (count_check.checked) {
+		warn_IOS();
+	}
+});
 
 play_check.addEventListener("change", function() {
 	metronome.trigger();
