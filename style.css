@@ -3,8 +3,8 @@ html {
 }
 
 body {
-	background-color: #1f1a30;
-	color: #dad9d4;
+	background-color: #111;
+	color: #fff;
 	font-family: Arial, sans-serif;
 }
 
@@ -26,10 +26,6 @@ a, a:hover, button, button:hover {
 	transition: 100ms;
 }
 
-button:hover, a[role="button"]:hover {
-	box-shadow: 0 0 20px #000008;
-}
-
 a {
 	color: #FFCB05;
 }
@@ -40,6 +36,7 @@ a:hover {
 
 #metInfo b {
 	font-family: monospace, monospace;
+	color: #e24763;
 }
 
 #btnContainer label {
@@ -47,7 +44,7 @@ a:hover {
 	box-sizing: border-box;
 	width: 0;
 	height: 74px;
-	border-color: transparent transparent transparent #dad9d4;
+	border-color: transparent transparent transparent #fff;
 	transition: 100ms all ease;
 	cursor: pointer;
 	border-style: double;
@@ -77,14 +74,17 @@ a:hover {
 	height: 60px;
 	border-radius: 50%;
 	font-size: 20px;
-	color: #dad9d4;
-	background-color: #2a4949;
-	border: none;
 }
 
-#BPMControls button:hover {
-	color: #1e2227;
-	background-color: #557574;
+#BPMControls button, #aboutBtn, #inspireBtn, #scrollUpBtn {
+	border: 2px solid #fff;
+	color: #fff;
+	background-color: #111;
+}
+
+#BPMControls button:hover, #aboutBtn:hover, #inspireBtn:hover, #scrollUpBtn:hover {
+	color: #111;
+	background-color: #fff;
 }
 
 #metInfo {
@@ -111,7 +111,6 @@ select {
 
 #navBtnGroup a, #scrollUpBtn {
 	padding: 20px;
-	border: none;
 	appearance: button;
 	text-decoration: none;
 }
@@ -119,31 +118,20 @@ select {
 #aboutBtn {
 	border-top-left-radius: 35px;
 	border-bottom-left-radius: 35px;
-	color: #000;
-	background-color: #82a4a3;
+	border-right: none;
 }
 
 #inspireBtn {
 	margin-left: -5px;
 	border-top-right-radius: 35px;
 	border-bottom-right-radius: 35px;
-	color: #fff;
-	background-color: #557574;
-}
-
-#aboutBtn:hover {
-	background-color: #dad9d4;
-}
-
-#inspireBtn:hover {
-	background-color: #2a4949;
 }
 
 .section {
 	margin: 2vw;
 }
 
-.section p, .section b, .section i {
+.section {
 	font-size: 20px;
 	line-height: 1.8;
 }
@@ -152,8 +140,9 @@ select {
 	color: #FFCB05;
 }
 
-.section i {
-	color: #81e8dd;
+.question {
+	color: #ff4b6f;
+	font-size: 30px;
 }
 
 .subhead {
@@ -168,12 +157,6 @@ select {
 
 #scrollUpBtn {
 	border-radius: 35px;
-	color: #fff;
-	background-color: #2a4949;
-}
-
-#scrollUpBtn:hover {
-	background-color: #557574;
 }
 
 @media(max-width: 500px) {
