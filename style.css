@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	background-color: #111;
+	background-color: #080808;
 	color: #fff;
 	font-family: Arial, sans-serif;
 }
@@ -79,11 +79,11 @@ a:hover {
 #BPMControls button, #aboutBtn, #inspireBtn, #scrollUpBtn {
 	border: 2px solid #fff;
 	color: #fff;
-	background-color: #111;
+	background-color: #080808;
 }
 
 #BPMControls button:hover, #aboutBtn:hover, #inspireBtn:hover, #scrollUpBtn:hover {
-	color: #111;
+	color: #080808;
 	background-color: #fff;
 }
 
