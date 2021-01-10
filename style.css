@@ -76,7 +76,7 @@ a:hover {
 	border-radius: 50%;
 	background: #e24763;
 	cursor: pointer;
-	margin-top: 0;
+	margin-top: -3px;
 }
 
 #BPM::-moz-range-thumb {
