@@ -73,10 +73,11 @@ a:hover {
 	-webkit-appearance: none;
 	height: 25px;
 	width: 25px;
+	border: none;
 	border-radius: 50%;
 	background: #e24763;
 	cursor: pointer;
-	margin-top: -9px;
+	margin-top: -10px;
 }
 
 #BPM::-moz-range-thumb {
