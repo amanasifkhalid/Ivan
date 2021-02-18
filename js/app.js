@@ -8,6 +8,7 @@ var octave_select = document.getElementById("octaveSelect");
 var instrument_select = document.getElementById("instrumentSelect");
 var play_check = document.getElementById("playPauseCheck");
 var curr_note = document.getElementById("currNote");
+var dark_mode = document.getElementById("darkMode");
 bpm.value = metronome.bpm;
 var IOS_warning = false;
 
@@ -53,6 +54,20 @@ count_check.addEventListener("change", function() {
 		warn_IOS();
 	}
 });
+
+dark_mode.addEventListener("change", function() {
+    if (dark_mode.checked) {
+        document.getElementsByTagName("body")[0].style.background = "#00001a";
+        document.getElementById("metInfo").getElementsByTagName("b")[0].style.color = "#e24763";
+        document.getElementById("metInfo").getElementsByTagName("b")[1].style.color = "#e24763";
+        document.getElementById("metInfo").getElementsByTagName("b")[2].style.color = "#e24763";
+    } else {
+        document.getElementsByTagName("body")[0].style.background = "#202340";
+        document.getElementById("metInfo").getElementsByTagName("b")[0].style.color = "#b6dff9";
+        document.getElementById("metInfo").getElementsByTagName("b")[1].style.color = "#b6dff9";
+        document.getElementById("metInfo").getElementsByTagName("b")[2].style.color = "#b6dff9";
+    }
+})
 
 play_check.addEventListener("change", function() {
 	metronome.trigger();

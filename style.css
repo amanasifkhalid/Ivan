@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	background: #080808;
+	background: #202340;
 	color: #fff;
 	font-family: Arial, sans-serif;
 }
@@ -36,7 +36,7 @@ a:hover {
 
 #metInfo b {
 	font-family: monospace, monospace;
-	color: #e24763;
+	color: #b6dff9;
 }
 
 #btnContainer label {
@@ -134,11 +134,11 @@ a:hover {
 #BPMControls button, #aboutBtn, #inspireBtn, #scrollUpBtn {
 	border: 2px solid #fff;
 	color: #fff;
-	background: #080808;
+	background: transparent;
 }
 
 #BPMControls button:hover, #aboutBtn:hover, #inspireBtn:hover, #scrollUpBtn:hover {
-	color: #080808;
+	color: #000;
 	background: #fff;
 }
 
@@ -196,7 +196,7 @@ select {
 }
 
 .question {
-	color: #ff4b6f;
+	color: #b6dff9;
 	font-size: 30px;
 }
 

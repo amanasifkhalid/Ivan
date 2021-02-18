@@ -15,7 +15,7 @@
 		<script defer src="js/app.js"></script>
 	</head>
 	<body onload="reset_choices()">
-		<a id="credits" href="https://amanasifkhalid.github.io/" target="_blank">By Aman Khalid</a>
+        <a id="credits" href="https://amanasifkhalid.github.io/" target="_blank">By Aman Khalid</a>
 		<div id="metronomeUI">
 			<h1>Welcome to Ivan! 🎻</h1>
 			<div id="btnContainer">
@@ -35,7 +35,6 @@
 				<div id="countCheck">
 					<input type="checkbox" id="countReps" name="countReps" checked>
 					<label for="countReps">Count Reps</label>
-
 				</div>
 				<div id="keySig">
 					<label for="tonicSelect">Tonic:</label>
@@ -70,12 +69,16 @@
 						<option value="3">3</option>
 						<option value="4">4</option>
 					</select>
-				</div>
+                </div>
 			</div>
 			<div id="navBtnGroup">
 				<a id="aboutBtn" role="button" href="#about">About Ivan&nbsp;</a>
 				<a id="inspireBtn" role="button" href="#" onclick="inspire()">Get Inspired</a>
-			</div>
+            </div>
+            <div>
+                <input type="checkbox" id="darkMode" name="darkMode">
+		        <label for="darkMode">Dark Mode</label>
+            </div>
 		</div>
 		<div id="about" class="section">
 			<h2 class="subhead">About</h2>
