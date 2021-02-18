@@ -12,10 +12,10 @@ bpm.value = metronome.bpm;
 var IOS_warning = false;
 
 function reset_choices() {
-	count_check.checked = false;
+	count_check.checked = true;
 	play_check.checked = true;
 	tonic_select.value = "A";
-	octave_select.value = "3";
+	octave_select.value = "1";
 	instrument_select.value = "0";
 }
 
